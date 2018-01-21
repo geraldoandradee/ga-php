@@ -3,7 +3,7 @@
 namespace GAPHP\Library\Http;
 
 use GAPHP\Library\Exceptions\Http\ResponseAlreadySentException;
-use GAPHP\Library\Exceptions\LockedResponseException;
+use GAPHP\Library\Exceptions\GAPHPLockedResponseException;
 
 
 /**
@@ -242,13 +242,13 @@ abstract class AbstractResponse
    * preventing any methods from mutating the response
    * when its locked
    *
-   * @throws LockedResponseException  If the response is locked
+   * @throws GAPHPLockedResponseException  If the response is locked
    * @return AbstractResponse
    */
   public function requireUnlocked()
   {
     if ($this->isLocked()) {
-      throw new LockedResponseException('Response is locked');
+      throw new GAPHPLockedResponseException('Response is locked');
     }
 
     return $this;

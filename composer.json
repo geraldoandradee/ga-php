@@ -17,7 +17,6 @@
   "require": {
     "php": ">=7.0.0",
     "monolog/monolog": "^1.17",
-    "altorouter/altorouter": "1.2.*",
     "crodas/haanga": "1.0.7"
   },
   "require-dev": {

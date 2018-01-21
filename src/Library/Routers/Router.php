@@ -2,16 +2,20 @@
 
 namespace GAPHP\Library\Routers;
 
-use AltoRouter;
+use GAPHP\Library\Routers\Engine\GAPHPRouter;
 
-class Router extends AltoRouter implements IRoute
+class Router extends GAPHPRouter implements IRoute
 {
   private static $instance;
 
+  /**
+   * @return GAPHPRouter
+   * @throws \Exception
+   */
   public static function getInstance()
   {
     if (!self::$instance) {
-      self::$instance = new AltoRouter();
+      self::$instance = new GAPHPRouter();
     }
 
     return self::$instance;

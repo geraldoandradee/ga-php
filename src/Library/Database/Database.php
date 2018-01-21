@@ -2,9 +2,7 @@
 
 namespace GAPHP\Library\Database;
 
-
 use PDO;
-
 
 class Database
 {

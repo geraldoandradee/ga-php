@@ -23,6 +23,10 @@ class App extends BaseApp
     return self::$app;
   }
 
+  /**
+   * @param array $params
+   * @throws \Exception
+   */
   public static function setParams(array $params)
   {
     if (!self::$app) {
@@ -59,10 +63,11 @@ class App extends BaseApp
     $this->autoConfig = $autoConfig;
   }
 
+  /**
+   *
+   */
   public function run()
   {
-
-
     $this->setupRoutes();
     $match = $this->router->match();
 

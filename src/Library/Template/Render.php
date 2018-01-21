@@ -2,6 +2,8 @@
 
 namespace GAPHP\Library\Template;
 
+use GAPHP\Library\Exceptions\GAPHPTemplateException;
+
 class Render
 {
   private static $instance;
@@ -35,7 +37,6 @@ class Render
   public function configure(Array $opts)
   {
     \Haanga::configure($opts);
-
     return $this;
   }
 
@@ -44,11 +45,9 @@ class Render
     try {
       return \Haanga::Load($tpl, $context, $return, $blocks);
     } catch (\Haanga_Exception $e) {
-      var_dump($e);
-      die();
+      throw new GAPHPTemplateException(print_r($e, true));
     } catch (\Exception $e) {
-      var_dump($e);
-      die();
+      throw new GAPHPTemplateException(print_r($e, true));
     }
   }
 
