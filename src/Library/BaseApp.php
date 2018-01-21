@@ -2,9 +2,10 @@
 
 namespace GAPHP\Library;
 
-use Contabilissimo\Library\Http\Request;
-use Contabilissimo\Library\Http\Response;
-use Contabilissimo\Library\Routers\Router;
+use GAPHP\Library\Exceptions\GAPHPAppException;
+use GAPHP\Library\Http\Request;
+use GAPHP\Library\Http\Response;
+use GAPHP\Library\Routers\Router;
 
 abstract class BaseApp
 {
@@ -88,9 +89,12 @@ abstract class BaseApp
 
   protected function run()
   {
-    throw new \Exception("Not implemented");
+    throw new GAPHPAppException("Not implemented");
   }
 
+  /**
+   * @throws \Exception
+   */
   protected function setupRoutes()
   {
     /** @var \GAPHP\Library\Routers\Route $route */
