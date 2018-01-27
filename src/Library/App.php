@@ -64,7 +64,9 @@ class App extends BaseApp
   }
 
   /**
+   * Runs application.
    *
+   * @throws \Exception
    */
   public function run()
   {
